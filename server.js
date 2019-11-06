@@ -87,7 +87,6 @@ bot.on("ready", function(){
     console.log(`the client becomes ready to start`);
 	console.log(`I am ready! Logged in as ${bot.user.tag}!`);
 	console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`); 
-
   	bot.user.setActivity("");
 	bot.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
 	.then(link => {
