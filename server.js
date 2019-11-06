@@ -79,20 +79,19 @@ fs.readdir('./events/', (err, files) => { // We use the method readdir to read w
 bot.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-  bot.user.setActivity(`Serving ${client.guilds.size} servers`);
+  bot.user.setActivity(`Serving ${bot.guilds.size} servers`);
 });
 
 
 bot.on("ready", function(){
     console.log(`the client becomes ready to start`);
-	console.log(`I am ready! Logged in as ${client.user.tag}!`);
-	console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
+	console.log(`I am ready! Logged in as ${bot.user.tag}!`);
+	console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`); 
 
-  	bot.user.setActivity("the upright organ");
+  	bot.user.setActivity("");
 	bot.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
 	.then(link => {
 		console.log(`Generated bot invite link: ${link}`);
-		inviteLink = link;
 	});
 });
 
