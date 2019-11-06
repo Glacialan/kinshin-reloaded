@@ -76,15 +76,25 @@ fs.readdir('./events/', (err, files) => { // We use the method readdir to read w
 });
 
 
-
-bot.on("guildMemberAdd", (member) => {
-  console.log(`New User "${member.user.username}" has joined "${member.guild.name}"` );
-  member.guild.channels.find(c => c.name === "ɷ┊chatsy♡ ").send(`Welcome!`);
+bot.on("guildCreate", guild => {
+  // This event triggers when the bot joins a guild.
+  console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
+  bot.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
 
 
+bot.on("ready", function(){
+    console.log(`the client becomes ready to start`);
+	console.log(`I am ready! Logged in as ${client.user.tag}!`);
+	console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
 
-
+  	bot.user.setActivity("the upright organ");
+	bot.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
+	.then(link => {
+		console.log(`Generated bot invite link: ${link}`);
+		inviteLink = link;
+	});
+});
 
 
 bot.login(config.token);
