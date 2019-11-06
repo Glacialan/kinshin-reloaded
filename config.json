@@ -1,6 +1,6 @@
 {
- "ownerID": "<Your personal ID here>",
- "token": "<Your super-secret bot token here>",
- "prefix": "!",
+ "ownerID": "171335165476470784",
+ "token": "NTEzNTg3ODcwNzA0MDc0NzUy.XcIYGA.7DnBdoBhOaAhMmIh4KtiX4eC1JU",
+ "prefix": "k.",
  "_comment": "Edit the prefix to whatever you want as prefix, default will be !"
 }
