@@ -56,28 +56,31 @@ bot.on("message", async message => {
   var author = message.author;
 })
 
-//message stuff
-client.on('message', (message) => {
-  //for me
-    if(message.content.includes('<@171335165476470784>')) {
-        message.react('❤');
-        message.react('😎');
+fs.readdir('./events/', (err, files) => { // We use the method readdir to read what is in the events folder
+	if (err) return console.error(err); // If there is an error during the process to read all contents of the ./events folder, throw an error in the console
+	files.forEach(file => {
+		const eventFunction = require(`./events/${file}`); // Here we require the event file of the events folder
+		if (eventFunction.disabled) return; // Check if the eventFunction is disabled. If yes return without any error
 
+		const event = eventFunction.event || file.split('.')[0]; // Get the exact name of the event from the eventFunction variable. If it's not given, the code just uses the name of the file as name of the event
+		const emitter = (typeof eventFunction.emitter === 'string' ? client[eventFunction.emitter] : eventFunction.emitter) || client; // Here we define our emitter. This is in our case the client (the bot)
+		const once = eventFunction.once; // A simple variable which returns if the event should run once
 
-    }
-  //for loli
-    if(message.content.includes('<@415208373953232906>')) {
-        message.react('634844734585569282');
-        message.react('632932858243055645');
-    }
-
-  //for sammy
-    if(message.content.includes('<@560821786011369472>')) {
-        message.react('634844734585569282');
-    }
+		// Try catch block to throw an error if the code in try{} doesn't work
+		try {
+			emitter[once ? 'once' : 'on'](event, (...args) => eventFunction.run(...args)); // Run the event using the above defined emitter (client)
+		} catch (error) {
+			console.error(error.stack); // If there is an error, console log the error stack message
+		}
+	});
 });
 
 
+
+client.on("guildMemberAdd", (member) => {
+  console.log(`New User "${member.user.username}" has joined "${member.guild.name}"` );
+  member.guild.channels.find(c => c.name === "welcome").send(`"${member.user.username}" has joined this server`);
+});
 
 
 
