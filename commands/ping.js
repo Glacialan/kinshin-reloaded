@@ -1,10 +1,11 @@
 const Discord = require("discord.js");
+const config = require("../config.json");
 
 module.exports.run = async (bot, message, args) => {
      
   const exampleEmbed = new Discord.RichEmbed()
     
-    .setColor('#0099ff')
+    .setColor(config.mainColor)
     .setTitle('Pong! :ping_pong:')
     .setDescription('> Ping: ' + Math.round(bot.ping))
   

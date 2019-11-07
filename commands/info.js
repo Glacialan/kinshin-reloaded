@@ -7,9 +7,9 @@ module.exports.run = async (bot, message, args) => {
   
   console.log(`Help used in ${message.guild.name} #${message.channel.name} by ${message.author.tag}`)
   
-  message.channel.send('Yeah, sure... I bet you want help.)
+  message.channel.send('help! :black_heart:' + message.author)
 }
 
 module.exports.help = {
-  name: "help"
+  name: "info"
 }
