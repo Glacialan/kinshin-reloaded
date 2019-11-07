@@ -54,7 +54,18 @@ bot.on("message", async message => {
   if (!message.content.startsWith(prefix)) return;
   if(commandfile) commandfile.run(bot,message,args);
   var author = message.author;
+  
 })
+
+
+
+
+
+
+
+
+
+
 
 
 
