@@ -1,13 +1,15 @@
 const Discord = require("discord.js");
-
+const config = require("../config.json");
 module.exports.run = async (bot, message, args) => {
+  const exampleEmbed = new Discord.RichEmbed()
      
+    .setColor(config.mainColor)
+    .setTitle('Kinshin Info')
+    .setTimestamp()
   
-  let guildname = message;
-  
-  console.log(`Help used in ${message.guild.name} #${message.channel.name} by ${message.author.tag}`)
-  
-  message.channel.send('help! :black_heart:' + message.author)
+     
+  message.channel.send(exampleEmbed);
+  console.log(`Info used in ${message.guild.name} #${message.channel.name} by ${message.author.tag}`)    
 }
 
 module.exports.help = {

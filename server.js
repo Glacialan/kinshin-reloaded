@@ -56,7 +56,10 @@ bot.on("message", async message => {
   var author = message.author;
 })
 
-
+bot.on("message"), async message => {
+  if (message.channel.type === DMChannel) return;
+  
+}
 
 
 
