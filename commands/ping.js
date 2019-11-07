@@ -1,11 +1,18 @@
 const Discord = require("discord.js");
 const config = require("../config.json");
 module.exports.run = async (bot, message, args) => {
+  
+  var rping = getRandomInt(0, 20);
+  
   const exampleEmbed = new Discord.RichEmbed()
     
+  
+  
+  
+  
     .setColor(config.mainColor)
     .setTitle('Pong! :ping_pong:')
-    .setDescription('> Ping: ' + Math.round(bot.ping))
+    .setDescription('> Ping: ' + Math.random(1500))
     .setTimestamp()
   
   message.channel.send(exampleEmbed);
