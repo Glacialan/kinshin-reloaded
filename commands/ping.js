@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
      
-  message.channel.send('Pong! :ping_pong:')
+  message.channel.send('You are a whore: ' + Math.round(bot.ping))
   
   let guildname = message;
   
