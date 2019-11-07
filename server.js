@@ -31,7 +31,7 @@ fs.readdir('./commands/', (err, files) => {
   }
   
   setTimeout(function(){ 
-    console.log(`Beginning startup for Date.now()`); 
+    console.log("Beginning startup"); 
   }, 0);
   
   jsfile.forEach((f, i) =>{
