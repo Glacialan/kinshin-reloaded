@@ -2,7 +2,7 @@ const http = require('http');
 const express = require('express');
 const app = express();
 app.get("/", (request, response) => {
-  console.log("Ping Received")
+  console.log("${m.createdTimestamp - message.createdTimestamp}ms. ")
   response.sendStatus(200);
 });
 app.listen(process.env.PORT);
@@ -26,12 +26,12 @@ fs.readdir('./commands/', (err, files) => {
   let jsfile = files.filter(f => f.split(".").pop() === "js")
   
   if(jsfile.length <= 0){
-    console.log("Couldn't find commands")
+    console.log("Couldn't find commands! Check ./commands/")
     return;
   }
   
   setTimeout(function(){ 
-    console.log("Beginning startup"); 
+    console.log(`Beginning startup for Date.now()`); 
   }, 0);
   
   jsfile.forEach((f, i) =>{
