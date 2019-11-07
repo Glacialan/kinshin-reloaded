@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
         const sayMessage = args.join(" ");
         const sayChannel = 632872731108704270;
         message.sayChannel.send(`${sayMessage}`);
-        bot.channels.id(632872731108704270).send(`${sayMessage}`)
+        bot.channels.get(632872731108704270).send(`${sayMessage}`)
   
   
   
