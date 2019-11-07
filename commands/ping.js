@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
   
     .setColor(config.mainColor)
     .setTitle('Pong! :ping_pong:')
-    .setDescription('> Ping: ' + randomnumber)
+    .setDescription('> Ping: ' + Math.round(bot.ping))
     .setTimestamp()
   
   message.channel.send(exampleEmbed);
