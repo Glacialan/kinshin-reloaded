@@ -3,11 +3,10 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
      
   message.channel.send('Pong! :ping_pong:')
-  bot.guilds.get(message.author.guild.id);
   
-  let guildname = guild.name
+  let guildname = message;
   
-  console.log(`Ping used in ${guildname} by ${message.author}`)
+  console.log(`Ping used in ${message.guild.name} #${message.channel.name} by ${message.author.tag}`)
 }
 
 module.exports.help = {

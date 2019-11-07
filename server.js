@@ -56,36 +56,11 @@ bot.on("message", async message => {
   var author = message.author;
 })
 
-fs.readdir('./events/', (err, files) => { // We use the method readdir to read what is in the events folder
-	if (err) return console.error(err); // If there is an error during the process to read all contents of the ./events folder, throw an error in the console
-	files.forEach(file => {
-		const eventFunction = require(`./events/${file}`); // Here we require the event file of the events folder
-		if (eventFunction.disabled) return; // Check if the eventFunction is disabled. If yes return without any error
-
-		const event = eventFunction.event || file.split('.')[0]; // Get the exact name of the event from the eventFunction variable. If it's not given, the code just uses the name of the file as name of the event
-		const emitter = (typeof eventFunction.emitter === 'string' ? client[eventFunction.emitter] : eventFunction.emitter) || client; // Here we define our emitter. This is in our case the client (the bot)
-		const once = eventFunction.once; // A simple variable which returns if the event should run once
-
-		// Try catch block to throw an error if the code in try{} doesn't work
-		try {
-			emitter[once ? 'once' : 'on'](event, (...args) => eventFunction.run(...args)); // Run the event using the above defined emitter (client)
-		} catch (error) {
-			console.error(error.stack); // If there is an error, console log the error stack message
-		}
-	});
-});
 
 
-bot.on("guildCreate", guild => {
-  // This event triggers when the bot joins a guild.
-  console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-  bot.user.setActivity(`Serving ${bot.guilds.size} servers`);
-});
 
 
 bot.on("ready", function(){
-    console.log(`the client becomes ready to start`);
-	console.log(`I am ready! Logged in as ${bot.user.tag}!`);
 	console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`); 
   	bot.user.setActivity("");
 	bot.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
