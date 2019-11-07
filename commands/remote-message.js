@@ -7,10 +7,10 @@ module.exports.run = async (bot, message, args) => {
   if(!message.author.id === ownerid) return;
     if(!message.guild === null) return;
   
-        let target = args.slice(0).join(' ');
-        
-  
-        message.target.send(`${message}`);
+        const sayMessage = args.join(" ");
+        const sayChannel = 632872731108704270;
+        message.sayChannel.send(`${sayMessage}`);
+        bot.channels.id(632872731108704270).send(`${sayMessage}`)
   
   
   
