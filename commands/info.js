@@ -6,8 +6,10 @@ module.exports.run = async (bot, message, args) => {
     .setColor(config.mainColor)
     .setTitle('Kinshin Info')
     .setTimestamp()
+    .setThumbnail(bot.user.avatarURL)
+    .addField('Im a rad ass bot', 'Made by: Glacialan#2576')   
   
-     
+  
   message.channel.send(exampleEmbed);
   console.log(`Info used in ${message.guild.name} #${message.channel.name} by ${message.author.tag}`)    
 }
