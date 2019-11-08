@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail(bot.user.avatarURL)
     .addField(`In ${bot.guilds.size} Servers!`, '\u200b', true)
     .addField(`Serving ${bot.users.size} Users!`, '\u200b', true)
-    .addField('\u200b', `${bot.guild.list}`, true)
+    .addBlankField()
   
   message.channel.send(exampleEmbed);
   console.log(`Info used in ${message.guild.name} #${message.channel.name} by ${message.author.tag}`)    
