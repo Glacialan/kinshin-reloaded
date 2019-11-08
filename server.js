@@ -64,7 +64,7 @@ bot.on('message', (message) => {
     if(message.content.includes('<@171335165476470784>')) {
         message.react('634853502115643422');
         message.react('639242803502776340');
-
+        //message.react('639242793117548564');
 
     }
   //for loli
@@ -78,11 +78,6 @@ bot.on('message', (message) => {
 
     }
   
-    //for Kinshin
-    if(message.content.includes('<@513587870704074752>')) {
-        message.react('639242793117548564');
-
-    }
 });
 
 
