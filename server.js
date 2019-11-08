@@ -72,7 +72,17 @@ bot.on('message', (message) => {
         message.react('634844734585569282');
         message.react('632932858243055645');
     }
+  //for vito
+    if(message.content.includes('<@642112163603021870>')) {
+        message.react('639242803502776340');
 
+    }
+  
+    //for Kinshin
+    if(message.content.includes('<@513587870704074752>')) {
+        message.react('639242793117548564');
+
+    }
 });
 
 
