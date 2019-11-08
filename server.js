@@ -62,7 +62,7 @@ bot.on("message", async message => {
 bot.on('message', (message) => {
   //for me
     if(message.content.includes('<@171335165476470784>')) {
-        message.react('❤');
+        message.react('634853502115643422');
         message.react('😎');
 
 
@@ -72,8 +72,11 @@ bot.on('message', (message) => {
         message.react('634844734585569282');
         message.react('632932858243055645');
     }
+  //for sammy
+    if(message.content.includes('<@560821786011369472>')) {
+        message.react('639242803502776340');
 
-
+    }
 });
 
 
