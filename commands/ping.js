@@ -1,21 +1,18 @@
 const Discord = require("discord.js");
 const config = require("../config.json");
 module.exports.run = async (bot, message, args) => {
-  
+    
+    var m = message;
     var min = config.pingMin; 
     var max = config.pingMax;  
     var random = Math.random() * (+max - +min) + +min; 
     var randomnumber = (random).toFixed();
   
   const exampleEmbed = new Discord.RichEmbed()
-    
-  
-  
-  
   
     .setColor(config.mainColor)
     .setTitle('Pong! :ping_pong:')
-    .setDescription('> Ping: ' + Math.round(bot.ping))
+    .addField('> **Ping: **' + Math.round(bot.ping), '\u200b', true)
     .setTimestamp()
   
   message.channel.send(exampleEmbed);
