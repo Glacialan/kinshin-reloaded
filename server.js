@@ -77,6 +77,11 @@ bot.on('message', (message) => {
         message.react('639242803502776340');
 
     }
+    //for vito
+    if(message.content.includes('<@291348244267794433>')) {
+        message.react('😔');
+
+    }
   
 });
 

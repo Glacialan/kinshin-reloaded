@@ -14,6 +14,7 @@ module.exports.run = async (bot, message, args) => {
     .setTitle('Pong! :ping_pong:')
     .addField('> **Ping: **' + Math.round(bot.ping), '\u200b', true)
     .setTimestamp()
+    .setFooter('Probably accurate...')  
   
   message.channel.send(exampleEmbed);
   console.log(`Ping used in ${message.guild.name} #${message.channel.name} by ${message.author.tag}`)

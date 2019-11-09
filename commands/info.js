@@ -10,6 +10,7 @@ module.exports.run = async (bot, message, args) => {
     .addField(`In ${bot.guilds.size} Servers!`, '\u200b', true)
     .addField(`Serving ${bot.users.size} Users!`, '\u200b', true)
     .addBlankField()
+    
   
   message.channel.send(exampleEmbed);
   console.log(`Info used in ${message.guild.name} #${message.channel.name} by ${message.author.tag}`)    
