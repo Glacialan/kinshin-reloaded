@@ -11,13 +11,13 @@ module.exports.run = async (bot, message, args) => {
     .setTitle(':clown: Vibe Check:')
     .setDescription(member + ' is ' + vibecheck)
     .setTimestamp()
-  if(!member);
-    message.channel.send('> Please mention a user.')
-    return;
+  
+  if(!member) return message.channel.send('> Please mention a user.');   
+    
   if(member);
     message.channel.send(exampleEmbed);
     console.log(`Vibe Check used in ${message.guild.name} #${message.channel.name} by ${message.author.tag}`)
-    return;
+
 }
 
 module.exports.help = {
