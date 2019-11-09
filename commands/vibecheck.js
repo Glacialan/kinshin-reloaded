@@ -3,7 +3,7 @@ const config = require("../config.json");
 module.exports.run = async (bot, message, args) => {
   
   var member=  message.mentions.members.first();  
-  const options = ['Mad Clown', 'Hella Clown', 'Mad Cute', 'Hella Cute', 'Mad Soft', 'Hella Soft', 'Mad Cursed', 'Hella Cursed', 'Mad Gremlin', 'Hella Gremlin', 'Mad Fake', "Hella Fake"]
+  const options = ['Mad Clown', 'Hella Clown', 'Mad Cute', 'Hella Cute', 'Mad Soft', 'Hella Soft', 'Mad Cursed', 'Hella Cursed', 'Mad Gremlin', 'Hella Gremlin', 'Mad Fake', "Hella Fake", "Ew. Gross, your vibes hella disgusting."]
   const vibecheck = options[Math.floor(Math.random()*options.length)];
   const exampleEmbed = new Discord.RichEmbed()
 
@@ -13,7 +13,6 @@ module.exports.run = async (bot, message, args) => {
     .setTimestamp()
   
   if(!member) return message.channel.send('> Please mention a user.');   
-    
   if(member);
     message.channel.send(exampleEmbed);
     console.log(`Vibe Check used in ${message.guild.name} #${message.channel.name} by ${message.author.tag}`)
