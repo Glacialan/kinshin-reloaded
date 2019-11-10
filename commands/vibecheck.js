@@ -3,7 +3,7 @@ const config = require("../config.json");
 module.exports.run = async (bot, message, args) => {
   
   var member=  message.mentions.members.first();  
-  const options = ['Mad Clown', 'Hella Clown', 'Mad Cute', 'Hella Cute', 'Mad Soft', 'Hella Soft', 'Mad Cursed', 'Hella Cursed', 'Mad Gremlin', 'Hella Gremlin', 'Mad Fake', "Hella Fake", "Mad Funny", "Hella Funny", "Ew. Gross, your vibes hella disgusting."]
+  const options = ['Mad Clown', 'Hella Clown', 'Mad Cute', 'Hella Cute', 'Mad Soft', 'Hella Soft', 'Mad Cursed', 'Hella Cursed', 'Mad Gremlin', 'Hella Gremlin', 'Mad Fake', "Hella Fake", "Mad Funny", "Hella Funny", "Mad Doo Doo", "Hella Doo Doo","Ew. Gross, your vibes hella disgusting."]
   const vibecheck = options[Math.floor(Math.random()*options.length)];
   const exampleEmbed = new Discord.RichEmbed()
 
