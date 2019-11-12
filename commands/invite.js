@@ -10,9 +10,16 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail(bot.user.avatarURL)
     .addBlankField()
     
-  
   message.channel.send(exampleEmbed);
-  console.log(`Invite used in ${message.guild.name} #${message.channel.name} by ${message.author.tag}`)    
+  console.log(`Invite used in ${message.guild.name} #${message.channel.name} by ${message.author.tag}`)  
+
+//Generate invite link in console
+bot.generateInvite(['ADMINISTRATOR'])
+.then(link => {
+	console.log(`Invite link for quick grab: ${link}`);
+});
+
+
 }
 
 module.exports.help = {
