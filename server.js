@@ -56,40 +56,15 @@ bot.on("message", async message => {
 })
 
 
-
 bot.on('message', (message) => {
   //for me
     if(message.content.includes('<@171335165476470784>')) {
-        message.react('634853502115643422');
-        message.react('639242803502776340');
-        //message.react('639242793117548564');
-
-    }
-  //for loli
-    if(message.content.includes('<@415208373953232906>')) {
-        message.react('634844734585569282');
-        message.react('632932858243055645');
-    }
-  //for vito
-    if(message.content.includes('<@642112163603021870>')) {
-        message.react('639242803502776340');
-
-    }
-    //for vito
-    if(message.content.includes('<@291348244267794433>')) {
         message.react('😔');
+        //message.react('639242793117548564');
 
     }
   
 });
-
-
-
-
-
-
-
-
 
 
 bot.on("ready", function(){
