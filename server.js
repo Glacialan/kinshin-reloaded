@@ -61,7 +61,8 @@ bot.on('message', (message) => {
   //for me
     if(message.content.includes('<@171335165476470784>')) {
         message.react('😔');
-        //message.react('639242793117548564');
+        message.react('637560383208554496');
+        console.log('PING')
 
     }
   
