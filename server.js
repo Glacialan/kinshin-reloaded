@@ -70,7 +70,7 @@ bot.on('message', (message) => {
 
 bot.on("ready", function(){
 	console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`); 
-  	bot.user.setActivity(`${bot.guilds.size} Servers`, { type: 'WATCHING' });
+  	bot.user.setActivity(`${bot.guilds.size} Servers | k.help`, { type: 'WATCHING' });
 	bot.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
 	.then(link => {
 		console.log(`Generated bot invite link: ${link}`);
