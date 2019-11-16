@@ -57,18 +57,15 @@ bot.on("message", async message => {
 })
 
 
-bot.on('message', (message) => {
+//bot.on('message', (message) => {
   //for me
-    if(message.content.includes('<@171335165476470784>')) {
-        message.react('637560383208554496');
-        console.log('Glacialan Pinged')
-
-    }
-  
-});
+//    if(message.content.includes('<@171335165476470784>')) {
+//        message.react('637560383208554496');
+ //       console.log('Glacialan Pinged')
+//});
 
 
-bot.on("ready", function(){
+//bot.on("ready", function(){
 	console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`); 
   	bot.user.setActivity(`${bot.guilds.size} Servers | k.help`, { type: 'WATCHING' });
 	bot.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])

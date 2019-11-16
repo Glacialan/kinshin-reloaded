@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
   
     .setColor(config.mainColor)
     .setTitle('Pong! :ping_pong:')
-    .addField('> **Ping: **' + Math.round(bot.ping), '\u200b', true)
+    .addField('Ping: ' + Math.round(bot.ping), '\u200b', true)
     .setTimestamp()
     .setFooter('Probably accurate...')  
   
