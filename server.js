@@ -17,6 +17,8 @@ const client = new Discord.Client();
 bot.commands = new Discord.Collection();
 
 
+const blacklist = ["272299261461266432"];
+
 
 fs.readdir('./commands/', (err, files) => {
 
@@ -45,6 +47,7 @@ fs.readdir('./commands/', (err, files) => {
 });
 
 bot.on("message", async message => {
+  if (!message.author.id = blacklist.includes);
   let prefix = config.prefix;
   let messageArray = message.content.split(" ");
   let command = messageArray[0];
@@ -53,19 +56,23 @@ bot.on("message", async message => {
   if (!message.content.startsWith(prefix)) return;
   if(commandfile) commandfile.run(bot,message,args);
   var author = message.author;
+
   
 })
 
 
-//bot.on('message', (message) => {
+bot.on("message", async message => {
   //for me
-//    if(message.content.includes('<@171335165476470784>')) {
-//        message.react('637560383208554496');
- //       console.log('Glacialan Pinged')
-//});
+    if(message.content.includes('<@171335165476470784>')) {
+        message.react('637560383208554496');
+        console.log('Glacialan Pinged')
+
+    }
+  
+});
 
 
-//bot.on("ready", function(){
+bot.on("ready", function(){
 	console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`); 
   	bot.user.setActivity(`${bot.guilds.size} Servers | k.help`, { type: 'WATCHING' });
 	bot.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
