@@ -17,7 +17,7 @@ const client = new Discord.Client();
 bot.commands = new Discord.Collection();
 
 //Only fiil this with id's
-const blacklist = ["272299261461266432"];
+const blacklist = [];
 
 
 fs.readdir('./commands/', (err, files) => {
