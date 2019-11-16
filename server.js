@@ -16,7 +16,7 @@ const config = require("./config.json");
 const client = new Discord.Client();
 bot.commands = new Discord.Collection();
 
-
+//Only fiil this with id's
 const blacklist = ["272299261461266432"];
 
 
@@ -47,7 +47,7 @@ fs.readdir('./commands/', (err, files) => {
 });
 
 bot.on("message", async message => {
-  if (!message.author.id = blacklist.includes);
+  if (blacklist.includes(message.author.id)) return;
   let prefix = config.prefix;
   let messageArray = message.content.split(" ");
   let command = messageArray[0];
