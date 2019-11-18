@@ -28,30 +28,27 @@ module.exports.run = async (bot, message, args) => {
       "southafrica": ":flag_za:  South Africa"
   };  
   
-  let verifLevels = ["None", "Low", "Medium", "(╯°□°）╯︵  ┻━┻", "┻━┻ミヽ(ಠ益ಠ)ノ彡┻━┻"];
-  var member =  message.mentions.members.first();  
+  let verifLevels = ["None", "Low", "Medium", "(╯°□°）╯︵  ┻━┻", "┻━┻ミヽ(ಠ益ಠ)ノ彡┻━┻"]; 
   var author = message.author
   
-  if(!member) return message.channel.send('> Please mention a user.');   
   
   const exampleEmbed = new Discord.RichEmbed()
 
     .setColor(config.mainColor)
-    .setTitle('📄 User Info:')
-    .setDescription('Display Name: ' + member)
-    .addField('Account Age:', `${member.user.createdAt.toUTCString().substr(0, 16)} (${checkDays(member.user.createdAt)})`)
-    .addField('Join Date:', 'undefined')
-    .addField('Region:', `${member.user.region}`)
-    .addField('Roles:', member.roles ? member.roles.map(r => `${r}`).join(' | ') : "", true)
-    .setThumbnail(member.avatarURL)
+    .setTitle(message.guild.name)
+    .addField("Owner:", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
+    .addField("Region:", region[message.guild.region], true)
+    .addField("Verification Level:", verifLevels[message.guild.verificationLevel], true)
+    .addField("Amount of Roles:", message.guild.roles.size, true)
+    .setThumbnail(message.guild.iconURL)
     .setTimestamp()
   
-  if(member);
+
     message.channel.send(exampleEmbed);
-    console.log(`User Info used in ${message.guild.name} #${message.channel.name} by ${message.author.tag}`)
+    console.log(`Server Info used in ${message.guild.name} #${message.channel.name} by ${message.author.tag}`)
 
 }
 
 module.exports.help = {
-  name: "userinfo"
+  name: "serverinfo"
 }
