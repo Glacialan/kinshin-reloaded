@@ -6,6 +6,8 @@ module.exports.run = async (bot, message, args) => {
   
     .setColor(config.mainColor)
     .setTitle('🌺 Kinshin Help')
+    .addField('**userinfo**', 'Tells some basic information about the user. *Still a w.i.p.*')
+    .addField('**serverinfo**', 'Tells some basic information about the server.')
     .addField('**ping**','Shows the bot\'s response time.')
     .addField('**vibecheck**', 'Checks some vibes.')
     .addField('**decide**', 'Decides Yes or No.')

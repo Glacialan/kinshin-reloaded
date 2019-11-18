@@ -36,11 +36,13 @@ module.exports.run = async (bot, message, args) => {
 
     .setColor(config.mainColor)
     .setTitle(message.guild.name)
-    .addField("Owner:", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
+    .addField("Owner:", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
+    
     .addField("Region:", region[message.guild.region], true)
     .addField("Verification Level:", verifLevels[message.guild.verificationLevel], true)
     .addField("Amount of Roles:", message.guild.roles.size, true)
-    .setThumbnail(message.guild.iconURL)
+    .addField("Channels", message.guild.channels.size, true)
+    .addField("Total | Humans | Bots", `${message.guild.members.size} | ${message.guild.members.filter(member => !member.user.bot).size} | ${message.guild.members.filter(member => member.user.bot).size}`, true).setThumbnail(message.guild.iconURL)
     .setTimestamp()
   
 
