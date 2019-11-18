@@ -19,7 +19,6 @@ bot.commands = new Discord.Collection();
 //Only fiil this with id's
 const blacklist = ["272299261461266432", "527190833389240321", "347118205069819916", "568402091245043733"]; 
 
-
 fs.readdir('./commands/', (err, files) => {
 
   if(err) console.log(err);
@@ -59,18 +58,6 @@ bot.on("message", async message => {
 
   
 })
-
-
-bot.on("message", async message => {
-  //for me
-    if(message.content.includes('<@171335165476470784>')) {
-        message.react('637560383208554496');
-        console.log('Glacialan Pinged')
-
-    }
-  
-});
-
 
 bot.on("ready", function(){
 	console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`); 

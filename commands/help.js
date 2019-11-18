@@ -5,9 +5,10 @@ module.exports.run = async (bot, message, args) => {
     const exampleEmbed = new Discord.RichEmbed()
   
     .setColor(config.mainColor)
-    .setTitle('Kinshin Help')
+    .setTitle('🌺 Kinshin Help')
     .addField('**ping**','Shows the bot\'s response time.')
     .addField('**vibecheck**', 'Checks some vibes.')
+    .addField('**decide**', 'Decides Yes or No.')
     .setTimestamp()
     .setFooter('Created by Glacialan#2576')  
   
