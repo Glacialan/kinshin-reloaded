@@ -9,7 +9,6 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail(bot.user.avatarURL)
     .addField(`In ${bot.guilds.size} Servers!`, '\u200b', true)
     .addField(`Serving ${bot.users.size} Users!`, '\u200b', true)
-    .addField('\u200b', `${bot.guilds.channels.size}`, true)
     .addField("\u200b", "View My Discord Bot Page [Here](https://top.gg/bot/513587870704074752)")
     .addBlankField()
     
