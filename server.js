@@ -13,6 +13,7 @@ const fs = require('fs')
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const config = require("./config.json");
+const token = require("./token.json")
 const client = new Discord.Client();
 bot.commands = new Discord.Collection();
 
@@ -69,4 +70,4 @@ bot.on("ready", function(){
 });
 
 
-bot.login(config.token);
+bot.login(token.token);
