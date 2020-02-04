@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     .addField('**ping**','Shows the bot\'s response time.')
     .addField('**vibecheck**', 'Checks some vibes.')
     .addField('**decide**', 'Decides Yes or No.')
-    .addField('**impregnate', 'I think you can tell what this does.')
+    .addField('**impregnate**', 'I think you can tell what this does.')
     .setTimestamp()
     .setFooter('Created by Glacialan#2576')  
   
