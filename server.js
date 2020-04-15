@@ -17,7 +17,7 @@ const client = new Discord.Client();
 bot.commands = new Discord.Collection();
 
 //Only fiil this with id's
-const blacklist = ["272299261461266432", "527190833389240321", "568402091245043733", "159985870458322944"]; 
+const blacklist = ["171335165476470784"]; 
 
 fs.readdir('./commands/', (err, files) => {
 
@@ -46,7 +46,7 @@ fs.readdir('./commands/', (err, files) => {
 });
 
 bot.on("message", async message => {
-  if (blacklist.includes(message.author.id)) return;
+  if (!blacklist.includes(message.author.id)) return;
   let prefix = config.prefix;
   let messageArray = message.content.split(" ");
   let command = messageArray[0];
@@ -58,6 +58,12 @@ bot.on("message", async message => {
 
   
 })
+
+
+
+
+
+
 
 bot.on("ready", function(){
 	console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`); 
