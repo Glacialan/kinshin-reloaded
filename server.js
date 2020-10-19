@@ -1,14 +1,3 @@
-const http = require('http');
-const express = require('express');
-const app = express();
-app.get("/", (request, response) => {
-  response.sendStatus(200);
-});
-app.listen(process.env.PORT);
-setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 280000);
-
 const fs = require('fs')
 const Discord = require("discord.js");
 const bot = new Discord.Client();
@@ -16,8 +5,8 @@ const config = require("./config.json");
 const client = new Discord.Client();
 bot.commands = new Discord.Collection();
 
-//Only fiil this with id's
-const blacklist = ["171335165476470784"]; 
+//Only fiil this with id's who are bot banned
+const blacklist = [""]; 
 
 fs.readdir('./commands/', (err, files) => {
 
@@ -46,28 +35,25 @@ fs.readdir('./commands/', (err, files) => {
 });
 
 bot.on("message", async message => {
-  if (!blacklist.includes(message.author.id)) return;
-  let prefix = config.prefix;
+
+  if (blacklist.includes(message.author.id)) return;
+
+  let prefix = config.prefix
+
   let messageArray = message.content.split(" ");
   let command = messageArray[0];
   let args = messageArray.slice(1);
   let commandfile = bot.commands.get(command.slice(prefix.length));
+
   if (!message.content.startsWith(prefix)) return;
+
   if(commandfile) commandfile.run(bot,message,args);
   var author = message.author;
-
-  
 })
-
-
-
-
-
-
 
 bot.on("ready", function(){
 	console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`); 
-  	bot.user.setActivity(`${bot.guilds.size} Servers | k.help`, { type: 'WATCHING' });
+  	bot.user.setActivity(`${bot.guilds.size} Guilds | k.help`, { type: 'WATCHING' });
 	bot.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
 	.then(link => {
 		console.log(`Generated bot invite link: ${link}`);
