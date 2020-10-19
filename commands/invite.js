@@ -6,6 +6,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor(config.mainColor)
     .setTitle("Invite Kinshin")
     .addField("\u200b", "Add Kinshin to your server! [Click here](https://discordapp.com/oauth2/authorize?client_id=513587870704074752&scope=bot&permissions=8)", true)
+    .addField("\u200b", "Kinshin's bot page! [Click here](https://top.gg/bot/513587870704074752)")
     .setTimestamp()
     .setThumbnail(bot.user.avatarURL)
     .addBlankField()
