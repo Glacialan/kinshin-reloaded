@@ -75,4 +75,4 @@ bot.on("ready", function(){
 });
 
 
-bot.login(config.token);
+bot.login(os.getenv('TOKEN'));
